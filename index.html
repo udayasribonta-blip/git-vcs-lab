@@ -18,7 +18,7 @@
       font-family: Arial, sans-serif;
     }
 
-    header {
+    .site-header {
       padding: 18px 7%;
       background: white;
       border-bottom: 1px solid #e1e6f0;
@@ -39,19 +39,20 @@
       font-size: 30px;
     }
 
-    nav {
+    .main-nav {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 22px;
     }
 
-    nav a {
+    .main-nav a {
       color: #243047;
       font-weight: bold;
       text-decoration: none;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       color: #2155cd;
       text-decoration: underline;
     }
@@ -63,23 +64,23 @@
     }
 
     .hero {
-      margin-bottom: 48px;
-      padding: 60px;
+      margin-bottom: 46px;
+      padding: 56px;
       border-radius: 20px;
       color: white;
       background: linear-gradient(120deg, #214fc5, #718cf0);
     }
 
     .hero h2 {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 0 16px;
       font-size: 44px;
     }
 
     .hero p {
-      max-width: 620px;
-      line-height: 1.6;
+      max-width: 650px;
       font-size: 18px;
+      line-height: 1.6;
     }
 
     .button {
@@ -97,8 +98,7 @@
       background: #eef2ff;
     }
 
-    .products h2,
-    .about h2 {
+    .products h2 {
       margin-bottom: 22px;
       font-size: 30px;
     }
@@ -131,22 +131,17 @@
 
     .product-info h3 {
       margin-top: 0;
-      font-size: 21px;
-    }
-
-    .product-info p {
-      line-height: 1.5;
     }
 
     .price {
       color: #2155cd;
-      font-weight: bold;
       font-size: 19px;
+      font-weight: bold;
     }
 
     .about {
-      margin-top: 48px;
-      padding: 32px;
+      margin-top: 46px;
+      padding: 30px;
       border-radius: 15px;
       background: #eaf0ff;
       text-align: center;
@@ -165,8 +160,8 @@
         flex-direction: column;
       }
 
-      nav {
-        gap: 16px;
+      .main-nav {
+        gap: 14px;
       }
 
       main {
@@ -189,14 +184,15 @@
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     <div class="header-content">
       <h1 class="brand">ShopEase</h1>
 
-      <nav aria-label="Main navigation">
-        <a href="forms.html">Register / Checkout</a>
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="products.html">Catalog</a>
+        <a href="forms.html">Register / Checkout</a>
+        <a href="grid-form.html">Grid Form</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -237,6 +233,159 @@
           <div class="product-info">
             <h3>Travel Backpack</h3>
             <p>Spacious and durable for college or travel.</p>
+            <p class="price">₹899</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Camera">📷</div>
+          <div class="product-info">
+            <h3>Digital Camera</h3>
+            <p>Capture photos and memorable moments.</p>
+            <p class="price">₹8,499</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Mobile phone">📱</div>
+          <div class="product-info">
+            <h3>Smartphone</h3>
+            <p>A reliable phone for work and entertainment.</p>
+            <p class="price">₹14,999</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Laptop">💻</div>
+          <div class="product-info">
+            <h3>Everyday Laptop</h3>
+            <p>Useful for study, browsing, and office work.</p>
+            <p class="price">₹42,999</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Tablet">📲</div>
+          <div class="product-info">
+            <h3>Compact Tablet</h3>
+            <p>A handy screen for reading and streaming.</p>
+            <p class="price">₹12,499</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Speaker">🔊</div>
+          <div class="product-info">
+            <h3>Bluetooth Speaker</h3>
+            <p>Enjoy music at home or on the go.</p>
+            <p class="price">₹1,499</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Sunglasses">🕶️</div>
+          <div class="product-info">
+            <h3>Classic Sunglasses</h3>
+            <p>Lightweight style for sunny days.</p>
+            <p class="price">₹799</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Shoes">👟</div>
+          <div class="product-info">
+            <h3>Running Shoes</h3>
+            <p>Comfortable shoes for daily walks.</p>
+            <p class="price">₹2,199</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Water bottle">🧴</div>
+          <div class="product-info">
+            <h3>Steel Water Bottle</h3>
+            <p>Reusable bottle for school, work, or travel.</p>
+            <p class="price">₹499</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Books">📚</div>
+          <div class="product-info">
+            <h3>Notebook Set</h3>
+            <p>Three notebooks for your daily notes.</p>
+            <p class="price">₹299</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Desk lamp">💡</div>
+          <div class="product-info">
+            <h3>LED Desk Lamp</h3>
+            <p>Bright, adjustable light for your desk.</p>
+            <p class="price">₹1,099</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Keyboard">⌨️</div>
+          <div class="product-info">
+            <h3>Wireless Keyboard</h3>
+            <p>A compact keyboard for your workspace.</p>
+            <p class="price">₹1,299</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Computer mouse">🖱️</div>
+          <div class="product-info">
+            <h3>Wireless Mouse</h3>
+            <p>Comfortable control for your computer.</p>
+            <p class="price">₹699</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Desk plant">🪴</div>
+          <div class="product-info">
+            <h3>Desk Plant</h3>
+            <p>A small decorative plant for your room.</p>
+            <p class="price">₹349</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Coffee mug">☕</div>
+          <div class="product-info">
+            <h3>Ceramic Coffee Mug</h3>
+            <p>A reusable mug for your favourite drink.</p>
+            <p class="price">₹399</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Wristwatch">⌚</div>
+          <div class="product-info">
+            <h3>Classic Wristwatch</h3>
+            <p>A simple watch for everyday wear.</p>
+            <p class="price">₹1,799</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Wallet">👛</div>
+          <div class="product-info">
+            <h3>Everyday Wallet</h3>
+            <p>A compact wallet for cards and cash.</p>
+            <p class="price">₹599</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Football">⚽</div>
+          <div class="product-info">
+            <h3>Training Football</h3>
+            <p>A durable ball for practice and play.</p>
             <p class="price">₹899</p>
           </div>
         </article>
