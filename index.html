@@ -7,283 +7,260 @@
   <title>ShopEase | Home</title>
 
   <style>
-   * {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  color: #243047;
-  background: #f5f7fc;
-  font-family: Arial, sans-serif;
-}
+    body {
+      margin: 0;
+      color: #243047;
+      background: #f5f7fc;
+      font-family: Arial, sans-serif;
+    }
 
-/* Header and Flexbox navigation */
-.site-header {
-  padding: 18px 7%;
-  background: white;
-  border-bottom: 1px solid #e1e6f0;
-}
+    .site-header {
+      padding: 18px 7%;
+      background: white;
+      border-bottom: 1px solid #e1e6f0;
+    }
 
-.header-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-.brand {
-  margin: 0;
-  color: #2155cd;
-  font-size: 30px;
-}
+    .brand {
+      margin: 0;
+      color: #2155cd;
+      font-size: 30px;
+    }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 22px;
-}
+    .main-nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-.main-nav a {
-  color: #243047;
-  font-weight: bold;
-  text-decoration: none;
-}
+    .main-nav a {
+      color: #243047;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.main-nav a:hover {
-  color: #2155cd;
-  text-decoration: underline;
-}
+    .main-nav a:hover {
+      color: #2155cd;
+      text-decoration: underline;
+    }
 
-/* Main page layout */
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px 24px 50px;
-}
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 24px 50px;
+    }
 
-/* Hero section */
-.hero {
-  margin-bottom: 46px;
-  padding: 56px;
-  border-radius: 20px;
-  color: white;
-  background: linear-gradient(120deg, #214fc5, #718cf0);
-  animation: slideIn 0.7s ease-out both;
-}
+    .hero {
+      margin-bottom: 46px;
+      padding: 56px;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(120deg, #214fc5, #718cf0);
+      animation: slideIn 0.7s ease-out both;
+    }
 
-.hero h2 {
-  max-width: 680px;
-  margin: 0 0 16px;
-  font-size: 44px;
-}
+    .hero h2 {
+      max-width: 680px;
+      margin: 0 0 16px;
+      font-size: 44px;
+    }
 
-.hero p {
-  max-width: 650px;
-  font-size: 18px;
-  line-height: 1.6;
-}
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-.button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 14px 20px;
-  border-radius: 9px;
-  color: #214fc5;
-  background: white;
-  font-weight: bold;
-  text-decoration: none;
-}
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 20px;
+      border-radius: 9px;
+      color: #214fc5;
+      background: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.button:hover {
-  background: #eef2ff;
-}
+    .button:hover {
+      background: #eef2ff;
+    }
 
-/* Product cards arranged with CSS Grid */
-.products h2 {
-  margin-bottom: 22px;
-  font-size: 30px;
-}
+    .products h2 {
+      margin-bottom: 22px;
+      font-size: 30px;
+    }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
 
-.product-card {
-  overflow: hidden;
-  border: 1px solid #e1e6f0;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 5px 16px rgb(32 43 67 / 7%);
-  animation: fadeUp 0.6s ease-out both;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #e1e6f0;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 5px 16px rgb(32 43 67 / 7%);
+      animation: fadeUp 0.6s ease-out both;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 22px rgb(32 43 67 / 13%);
-}
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 22px rgb(32 43 67 / 13%);
+    }
 
-/* Stagger the first few cards as they appear */
-.product-card:nth-child(2) {
-  animation-delay: 0.05s;
-}
+    .product-card:nth-child(2) { animation-delay: 0.05s; }
+    .product-card:nth-child(3) { animation-delay: 0.1s; }
+    .product-card:nth-child(4) { animation-delay: 0.15s; }
+    .product-card:nth-child(5) { animation-delay: 0.2s; }
+    .product-card:nth-child(6) { animation-delay: 0.25s; }
 
-.product-card:nth-child(3) {
-  animation-delay: 0.1s;
-}
+    .product-icon {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      background: #eaf0ff;
+      font-size: 72px;
+    }
 
-.product-card:nth-child(4) {
-  animation-delay: 0.15s;
-}
+    .product-info {
+      padding: 20px;
+    }
 
-.product-card:nth-child(5) {
-  animation-delay: 0.2s;
-}
+    .product-info h3 {
+      margin-top: 0;
+    }
 
-.product-card:nth-child(6) {
-  animation-delay: 0.25s;
-}
+    .price {
+      color: #2155cd;
+      font-size: 19px;
+      font-weight: bold;
+    }
 
-.product-icon {
-  min-height: 180px;
-  display: grid;
-  place-items: center;
-  background: #eaf0ff;
-  font-size: 72px;
-}
+    .about {
+      margin-top: 46px;
+      padding: 30px;
+      border-radius: 15px;
+      background: #eaf0ff;
+      text-align: center;
+    }
 
-.product-info {
-  padding: 20px;
-}
+    footer {
+      padding: 30px 24px 20px;
+      color: white;
+      background: #202b43;
+      text-align: center;
+    }
 
-.product-info h3 {
-  margin-top: 0;
-}
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: left;
+    }
 
-.price {
-  color: #2155cd;
-  font-size: 19px;
-  font-weight: bold;
-}
+    .footer-grid h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
 
-/* About section */
-.about {
-  margin-top: 46px;
-  padding: 30px;
-  border-radius: 15px;
-  background: #eaf0ff;
-  text-align: center;
-}
+    .footer-grid a {
+      color: white;
+    }
 
-/* Footer arranged with CSS Grid */
-footer {
-  padding: 30px 24px 20px;
-  color: white;
-  background: #202b43;
-  text-align: center;
-}
+    footer > p {
+      margin-top: 28px;
+    }
 
-.footer-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  text-align: left;
-}
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
 
-.footer-grid h2 {
-  margin-top: 0;
-  font-size: 18px;
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.footer-grid a {
-  color: white;
-}
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
 
-footer > p {
-  margin-top: 28px;
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
+    @media (max-width: 700px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      .main-nav {
+        gap: 14px;
+      }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
+      main {
+        padding: 20px 16px 36px;
+      }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      .hero {
+        padding: 36px 24px;
+      }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 700px) {
-  .header-content {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+      .hero h2 {
+        font-size: 32px;
+      }
 
-  .main-nav {
-    gap: 14px;
-  }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
 
-  main {
-    padding: 20px 16px 36px;
-  }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-  .hero {
-    padding: 36px 24px;
-  }
+      .product-card {
+        animation-delay: 0s;
+      }
+    }
 
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .product-card {
-    animation-delay: 0s;
-  }
-}
-
-/* Follow the visitor's reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}  </style>
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -294,6 +271,7 @@ footer > p {
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="products.html">Catalog</a>
+        <a href="auth.html">Login / Register</a>
         <a href="forms.html">Register / Checkout</a>
         <a href="grid-form.html">Grid Form</a>
         <a href="#about">About</a>
@@ -502,25 +480,26 @@ footer > p {
   </main>
 
   <footer id="contact">
-  <div class="footer-grid">
-    <section>
-      <h2>ShopEase</h2>
-      <p>Useful finds for work, travel, and home.</p>
-    </section>
+    <div class="footer-grid">
+      <section>
+        <h2>ShopEase</h2>
+        <p>Useful finds for work, travel, and home.</p>
+      </section>
 
-    <section>
-      <h2>Quick Links</h2>
-      <p><a href="index.html">Home</a></p>
-      <p><a href="products.html">Catalog</a></p>
-      <p><a href="forms.html">Register / Checkout</a></p>
-    </section>
+      <section>
+        <h2>Quick Links</h2>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="products.html">Catalog</a></p>
+        <p><a href="forms.html">Register / Checkout</a></p>
+      </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>hello@shopease.example</p>
-    </section>
-  </div>
+      <section>
+        <h2>Contact</h2>
+        <p>hello@shopease.example</p>
+      </section>
+    </div>
 
-  <p>&copy; 2026 ShopEase. All rights reserved.</p>
-</footer></body>
+    <p>&copy; 2026 ShopEase. All rights reserved.</p>
+  </footer>
+</body>
 </html>
