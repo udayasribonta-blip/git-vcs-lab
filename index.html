@@ -14,19 +14,19 @@
     body {
       margin: 0;
       color: #243047;
-      background: #f7f8fc;
+      background: #f5f7fc;
       font-family: Arial, sans-serif;
     }
 
     header {
+      padding: 18px 7%;
       background: white;
-      border-bottom: 1px solid #e6e8ee;
+      border-bottom: 1px solid #e1e6f0;
     }
 
-    .topbar {
-      max-width: 1100px;
+    .header-content {
+      max-width: 1200px;
       margin: auto;
-      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -36,124 +36,145 @@
     .brand {
       margin: 0;
       color: #2155cd;
-      font-size: 26px;
+      font-size: 30px;
     }
 
     nav {
       display: flex;
-      gap: 22px;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
     nav a {
-      color: #38445b;
-      text-decoration: none;
+      color: #243047;
       font-weight: bold;
+      text-decoration: none;
     }
 
     nav a:hover {
       color: #2155cd;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 24px 50px;
     }
 
     .hero {
-      max-width: 1052px;
-      margin: 34px auto;
-      padding: 52px;
-      border-radius: 18px;
+      margin-bottom: 48px;
+      padding: 60px;
+      border-radius: 20px;
       color: white;
-      background: linear-gradient(120deg, #214fc5, #6e8df1);
+      background: linear-gradient(120deg, #214fc5, #718cf0);
     }
 
     .hero h2 {
-      max-width: 520px;
-      margin: 0 0 14px;
-      font-size: 40px;
+      max-width: 650px;
+      margin: 0 0 16px;
+      font-size: 44px;
     }
 
     .hero p {
-      max-width: 500px;
+      max-width: 620px;
       line-height: 1.6;
+      font-size: 18px;
     }
 
     .button {
       display: inline-block;
       margin-top: 12px;
-      padding: 12px 18px;
-      border-radius: 8px;
+      padding: 14px 20px;
+      border-radius: 9px;
       color: #214fc5;
       background: white;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
-    .products {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 10px 24px 48px;
+    .button:hover {
+      background: #eef2ff;
     }
 
-    .products h2 {
-      margin-bottom: 20px;
+    .products h2,
+    .about h2 {
+      margin-bottom: 22px;
+      font-size: 30px;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
-    article {
-      padding: 22px;
-      border: 1px solid #e8eaf0;
-      border-radius: 14px;
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #e1e6f0;
+      border-radius: 15px;
       background: white;
+      box-shadow: 0 5px 16px rgb(32 43 67 / 7%);
     }
 
     .product-icon {
-      height: 130px;
+      min-height: 180px;
       display: grid;
       place-items: center;
-      border-radius: 10px;
-      background: #eef2ff;
-      font-size: 58px;
+      background: #eaf0ff;
+      font-size: 72px;
     }
 
-    article h3 {
-      margin-bottom: 8px;
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .product-info p {
+      line-height: 1.5;
     }
 
     .price {
       color: #2155cd;
-      font-size: 20px;
       font-weight: bold;
+      font-size: 19px;
     }
 
     .about {
-      padding: 34px 24px;
+      margin-top: 48px;
+      padding: 32px;
+      border-radius: 15px;
+      background: #eaf0ff;
       text-align: center;
-      background: #edf1fb;
     }
 
     footer {
-      padding: 22px;
+      padding: 24px;
       color: white;
       background: #202b43;
       text-align: center;
     }
 
     @media (max-width: 700px) {
-      .topbar {
+      .header-content {
         align-items: flex-start;
         flex-direction: column;
       }
 
       nav {
-        flex-wrap: wrap;
-        gap: 14px;
+        gap: 16px;
+      }
+
+      main {
+        padding: 20px 16px 36px;
       }
 
       .hero {
-        margin: 20px 16px;
-        padding: 32px 24px;
+        padding: 36px 24px;
       }
 
       .hero h2 {
@@ -166,57 +187,64 @@
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="topbar">
+    <div class="header-content">
       <h1 class="brand">ShopEase</h1>
 
       <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
+        <a href="index.html">Home</a>
+        <a href="products.html">Catalog</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
+  <main>
     <section class="hero" aria-labelledby="welcome-heading">
       <h2 id="welcome-heading">Everyday essentials, made easy.</h2>
       <p>Explore useful finds for work, travel, and home—all in one place.</p>
-      <a class="button" href="#products">Shop featured products</a>
+      <a class="button" href="products.html">Browse the catalog</a>
     </section>
 
-    <section class="products" id="products" aria-labelledby="products-heading">
-      <h2 id="products-heading">Popular this week</h2>
+    <section class="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Featured Products</h2>
 
       <div class="product-grid">
-        <article>
-          <div class="product-icon" aria-hidden="true">🎧</div>
-          <h3>Wireless Headphones</h3>
-          <p>Comfortable sound for music and calls.</p>
-          <p class="price">$49.99</p>
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Headphones">🎧</div>
+          <div class="product-info">
+            <h3>Wireless Headphones</h3>
+            <p>Comfortable sound for everyday use.</p>
+            <p class="price">₹1,999</p>
+          </div>
         </article>
 
-        <article>
-          <div class="product-icon" aria-hidden="true">⌚</div>
-          <h3>Smart Watch</h3>
-          <p>Keep track of your day and activity.</p>
-          <p class="price">$79.99</p>
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Smart watch">⌚</div>
+          <div class="product-info">
+            <h3>Smart Watch</h3>
+            <p>Track your steps and notifications.</p>
+            <p class="price">₹2,999</p>
+          </div>
         </article>
 
-        <article>
-          <div class="product-icon" aria-hidden="true">🎒</div>
-          <h3>Travel Backpack</h3>
-          <p>A lightweight companion for every day.</p>
-          <p class="price">$34.99</p>
+        <article class="product-card">
+          <div class="product-icon" role="img" aria-label="Backpack">🎒</div>
+          <div class="product-info">
+            <h3>Travel Backpack</h3>
+            <p>Spacious and durable for college or travel.</p>
+            <p class="price">₹899</p>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="about" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">Shopping that feels simple</h2>
-      <p>ShopEase helps you find practical products for everyday life.</p>
+      <h2 id="about-heading">About ShopEase</h2>
+      <p>We make it easy to find useful products for everyday life.</p>
     </section>
   </main>
 
