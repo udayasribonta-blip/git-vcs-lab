@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopEase customer registration and checkout forms">
+  <title>Registration and Checkout | ShopEase</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #243047;
+      background: #f5f7fc;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 18px 7%;
+      color: white;
+      background: #202b43;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #91aaff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      margin-bottom: 24px;
+      padding: 28px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(120deg, #214fc5, #718cf0);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+    }
+
+    .form-card {
+      margin-bottom: 26px;
+      padding: 28px;
+      border: 1px solid #e1e6f0;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 5px 16px rgb(32 43 67 / 7%);
+    }
+
+    .form-card h2 {
+      margin-top: 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label,
+    legend {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bfc8d8;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid #cbd7ff;
+      border-color: #2155cd;
+    }
+
+    fieldset {
+      margin: 0 0 18px;
+      padding: 16px;
+      border: 1px solid #d6dce8;
+      border-radius: 8px;
+    }
+
+    fieldset label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 18px 0 0;
+      font-weight: normal;
+    }
+
+    fieldset input {
+      width: auto;
+    }
+
+    .hint {
+      margin: 6px 0 0;
+      color: #5c6679;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 13px 20px;
+      border: 0;
+      border-radius: 8px;
+      color: white;
+      background: #2155cd;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #173fa1;
+    }
+
+    footer {
+      padding: 22px;
+      color: white;
+      background: #202b43;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>ShopEase</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Catalog</a>
+        <a href="forms.html">Register / Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h2 id="page-title">Customer Forms</h2>
+      <p>Create an account and enter sample checkout details.</p>
+    </section>
+
+    <section class="form-card" aria-labelledby="registration-title">
+      <h2 id="registration-title">Customer Registration</h2>
+
+      <form action="#" method="get">
+        <div class="form-row">
+          <div class="field">
+            <label for="full-name">Full name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="fullName"
+              placeholder="Enter your full name"
+              minlength="2"
+              maxlength="60"
+              autocomplete="name"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              autocomplete="email"
+              required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="10-digit phone number"
+              pattern="[0-9]{10}"
+              title="Enter exactly 10 digits"
+              autocomplete="tel"
+              required>
+            <p class="hint">Enter exactly 10 digits, without spaces.</p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="At least 8 characters"
+              minlength="8"
+              autocomplete="new-password"
+              required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="birth-date">Date of birth</label>
+          <input
+            type="date"
+            id="birth-date"
+            name="birthDate"
+            required>
+        </div>
+
+        <fieldset>
+          <legend>Preferred contact method</legend>
+          <label>
+            <input type="radio" name="contactMethod" value="email" required>
+            Email
+          </label>
+          <label>
+            <input type="radio" name="contactMethod" value="phone">
+            Phone
+          </label>
+        </fieldset>
+
+        <button type="submit">Create account</button>
+      </form>
+    </section>
+
+    <section class="form-card" aria-labelledby="checkout-title">
+      <h2 id="checkout-title">Checkout Details</h2>
+
+      <form action="#" method="get">
+        <div class="field">
+          <label for="product">Choose a product</label>
+          <select id="product" name="product" required>
+            <option value="">Select a product</option>
+            <option value="headphones">Wireless Headphones — ₹1,999</option>
+            <option value="watch">Smart Watch — ₹2,999</option>
+            <option value="backpack">Travel Backpack — ₹899</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="10"
+              value="1"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="delivery-date">Preferred delivery date</label>
+            <input
+              type="date"
+              id="delivery-date"
+              name="deliveryDate"
+              required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="address">Delivery address</label>
+          <textarea
+            id="address"
+            name="address"
+            rows="4"
+            minlength="10"
+            placeholder="Enter your delivery address"
+            autocomplete="street-address"
+            required></textarea>
+        </div>
+
+        <fieldset>
+          <legend>Payment method</legend>
+          <label>
+            <input type="radio" name="paymentMethod" value="cash" required>
+            Cash on delivery
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="upi">
+            UPI
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="card">
+            Card
+          </label>
+        </fieldset>
+
+        <button type="submit">Place sample order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ShopEase</p>
+  </footer>
+</body>
+</html>
