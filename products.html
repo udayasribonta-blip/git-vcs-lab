@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the ShopEase product catalog and watch our advertisement.">
+  <title>Product Catalog | ShopEase</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #243047;
+      background: #f5f7fc;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 20px 7%;
+      color: white;
+      background: #202b43;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #91aaff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #b8c7ff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 24px;
+    }
+
+    .intro {
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(120deg, #214fc5, #718cf0);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #e1e6f0;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 5px 16px rgb(32 43 67 / 7%);
+    }
+
+    .product-image {
+      min-height: 170px;
+      display: grid;
+      place-items: center;
+      background: #eaf0ff;
+      font-size: 72px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      margin: 0 0 10px;
+    }
+
+    .product-info p {
+      line-height: 1.5;
+    }
+
+    .price {
+      color: #2155cd;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .advertisement {
+      margin-top: 42px;
+      padding: 26px;
+      border: 1px solid #e1e6f0;
+      border-radius: 14px;
+      background: white;
+    }
+
+    .advertisement h2 {
+      margin-top: 0;
+    }
+
+    video,
+    audio {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      margin-top: 14px;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding: 24px;
+      color: white;
+      background: #202b43;
+      text-align: center;
+    }
+
+    @media (max-width: 750px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .catalog {
+        grid-template-columns: 1fr;
+      }
+
+      .intro h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>ShopEase</h1>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Catalog</a>
+        <a href="#advertisement">Advertisement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">Explore our product catalog</h2>
+      <p>Useful everyday finds, selected for you.</p>
+    </section>
+
+    <section aria-labelledby="products-heading">
+      <h2 id="products-heading">Featured Products</h2>
+
+      <div class="catalog">
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Headphones">🎧</div>
+          <div class="product-info">
+            <h3>Wireless Headphones</h3>
+            <p>Comfortable sound for music, study, and calls.</p>
+            <p class="price">₹1,999</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Smart watch">⌚</div>
+          <div class="product-info">
+            <h3>Smart Watch</h3>
+            <p>Track your steps and see notifications.</p>
+            <p class="price">₹2,999</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Backpack">🎒</div>
+          <div class="product-info">
+            <h3>Travel Backpack</h3>
+            <p>Spacious and durable for college or travel.</p>
+            <p class="price">₹899</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="advertisement" id="advertisement" aria-labelledby="ad-heading">
+      <h2 id="ad-heading">ShopEase Advertisement</h2>
+      <p>Play the sample video and audio using the built-in controls.</p>
+
+      <video controls>
+        <source
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+
+      <h3>Audio sample</h3>
+      <audio controls>
+        <source
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+          type="audio/mpeg">
+        Your browser does not support HTML audio.
+      </audio>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: hello@shopease.example</p>
+    <p>&copy; 2026 ShopEase. All rights reserved.</p>
+  </footer>
+</body>
+</html>
