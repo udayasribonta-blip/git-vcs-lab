@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopEase product search and order tracking dashboard">
+  <title>ShopEase | Product Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #243047;
+      background: #f5f7fc;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 18px 7%;
+      background: white;
+      border-bottom: 1px solid #e1e6f0;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      margin: 0;
+      color: #2155cd;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #243047;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #2155cd;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 34px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+      padding: 30px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(120deg, #214fc5, #718cf0);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+    }
+
+    .panel {
+      margin-bottom: 28px;
+      padding: 24px;
+      border: 1px solid #e1e6f0;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 5px 16px rgb(32 43 67 / 6%);
+    }
+
+    .search-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .search-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #bfc8d8;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    button {
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 8px;
+      color: white;
+      background: #2155cd;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #173fa1;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #e1e6f0;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      background: #eaf0ff;
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-info h3 {
+      margin-top: 0;
+    }
+
+    .price {
+      color: #2155cd;
+      font-weight: bold;
+    }
+
+    .message {
+      color: #5c6679;
+    }
+
+    .tracking-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tracking-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #bfc8d8;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    .tracking-result {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 9px;
+      background: #eef2ff;
+    }
+
+    .tracking-result h3 {
+      margin-top: 0;
+    }
+
+    .status-list {
+      padding-left: 22px;
+      line-height: 1.9;
+    }
+
+    .status-done {
+      color: #16733b;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding: 22px;
+      color: white;
+      background: #202b43;
+      text-align: center;
+    }
+
+    @media (max-width: 750px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .search-form,
+      .tracking-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1 class="brand">ShopEase</h1>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Catalog</a>
+        <a href="cart.html">Shopping Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Product and Order Dashboard</h2>
+      <p>Search sample products and check a demo order status.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="products-heading">
+      <h2 id="products-heading">Search Products</h2>
+
+      <form class="search-form" id="search-form">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search products, e.g. phone"
+          aria-label="Search products">
+        <button type="submit">Search</button>
+      </form>
+
+      <p class="message" id="product-message" aria-live="polite">
+        Loading products...
+      </p>
+
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="tracking-heading">
+      <h2 id="tracking-heading">Track an Order</h2>
+      <p>Try the sample order numbers: <strong>SE1001</strong> or <strong>SE1002</strong>.</p>
+
+      <form class="tracking-form" id="tracking-form">
+        <input
+          id="order-number"
+          type="text"
+          placeholder="Enter order number, e.g. SE1001"
+          aria-label="Order number"
+          required>
+        <button type="submit">Track Order</button>
+      </form>
+
+      <div id="tracking-result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ShopEase. Product and order data are for demonstration.</p>
+  </footer>
+
+  <script>
+    const productGrid = document.getElementById("product-grid");
+    const productMessage = document.getElementById("product-message");
+    const searchForm = document.getElementById("search-form");
+    const searchInput = document.getElementById("search-input");
+
+    function formatPrice(price) {
+      return "₹" + (price * 85).toLocaleString("en-IN", {
+        maximumFractionDigits: 0
+      });
+    }
+
+    function showProducts(products) {
+      if (products.length === 0) {
+        productGrid.innerHTML = "";
+        productMessage.textContent = "No products found. Try another search.";
+        return;
+      }
+
+      productMessage.textContent = products.length + " product(s) found.";
+
+      productGrid.innerHTML = products.map(function (product) {
+        return `
+          <article class="product-card">
+            <img src="${product.thumbnail}" alt="${product.title}">
+            <div class="product-info">
+              <h3>${product.title}</h3>
+              <p>${product.description}</p>
+              <p class="price">${formatPrice(product.price)}</p>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function loadProducts(searchTerm) {
+      productMessage.textContent = "Loading products...";
+      productGrid.innerHTML = "";
+
+      const query = searchTerm.trim();
+      const url = query
+        ? "https://dummyjson.com/products/search?q=" + encodeURIComponent(query)
+        : "https://dummyjson.com/products?limit=12";
+
+      try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error("The product request failed.");
+        }
+
+        const data = await response.json();
+        showProducts(data.products);
+      } catch (error) {
+        productMessage.textContent =
+          "Could not load products. Check your internet connection and try again.";
+      }
+    }
+
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      loadProducts(searchInput.value);
+    });
+
+    const sampleOrders = {
+      SE1001: {
+        item: "Wireless Headphones",
+        status: "Shipped",
+        steps: ["Order placed", "Packed", "Shipped", "Delivered"]
+      },
+      SE1002: {
+        item: "Travel Backpack",
+        status: "Processing",
+        steps: ["Order placed", "Processing", "Shipped", "Delivered"]
+      }
+    };
+
+    document.getElementById("tracking-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const orderNumber = document
+        .getElementById("order-number")
+        .value.trim()
+        .toUpperCase();
+
+      const order = sampleOrders[orderNumber];
+      const result = document.getElementById("tracking-result");
+
+      if (!order) {
+        result.innerHTML =
+          '<p class="message">Order not found. Try SE1001 or SE1002.</p>';
+        return;
+      }
+
+      const stepsHtml = order.steps.map(function (step) {
+        if (step === "Order placed" || step === order.status) {
+          return '<li class="status-done">' + step + " ✓</li>";
+        }
+
+        return "<li>" + step + "</li>";
+      }).join("");
+
+      result.innerHTML = `
+        <div class="tracking-result">
+          <h3>Order ${orderNumber}</h3>
+          <p><strong>Item:</strong> ${order.item}</p>
+          <p><strong>Current status:</strong> ${order.status}</p>
+          <ol class="status-list">${stepsHtml}</ol>
+        </div>
+      `;
+    });
+
+    loadProducts("");
+  </script>
+</body>
+</html>
