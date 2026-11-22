@@ -5,55 +5,218 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ShopEase online store homepage">
   <title>ShopEase | Home</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #243047;
+      background: #f7f8fc;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e6e8ee;
+    }
+
+    .topbar {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      margin: 0;
+      color: #2155cd;
+      font-size: 26px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: #38445b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #2155cd;
+    }
+
+    .hero {
+      max-width: 1052px;
+      margin: 34px auto;
+      padding: 52px;
+      border-radius: 18px;
+      color: white;
+      background: linear-gradient(120deg, #214fc5, #6e8df1);
+    }
+
+    .hero h2 {
+      max-width: 520px;
+      margin: 0 0 14px;
+      font-size: 40px;
+    }
+
+    .hero p {
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      color: #214fc5;
+      background: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .products {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 24px 48px;
+    }
+
+    .products h2 {
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    article {
+      padding: 22px;
+      border: 1px solid #e8eaf0;
+      border-radius: 14px;
+      background: white;
+    }
+
+    .product-icon {
+      height: 130px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #eef2ff;
+      font-size: 58px;
+    }
+
+    article h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: #2155cd;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .about {
+      padding: 34px 24px;
+      text-align: center;
+      background: #edf1fb;
+    }
+
+    footer {
+      padding: 22px;
+      color: white;
+      background: #202b43;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero {
+        margin: 20px 16px;
+        padding: 32px 24px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>ShopEase</h1>
-    <p>Find something you love.</p>
+    <div class="topbar">
+      <h1 class="brand">ShopEase</h1>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main id="home">
-    <section aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">Welcome to ShopEase</h2>
-      <p>Discover useful products at great prices.</p>
-      <a href="#products">Browse featured products</a>
+    <section class="hero" aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Everyday essentials, made easy.</h2>
+      <p>Explore useful finds for work, travel, and home—all in one place.</p>
+      <a class="button" href="#products">Shop featured products</a>
     </section>
 
-    <section id="products" aria-labelledby="products-heading">
-      <h2 id="products-heading">Featured Products</h2>
+    <section class="products" id="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Popular this week</h2>
 
-      <article>
-        <h3>Wireless Headphones</h3>
-        <p>Comfortable headphones for music and calls.</p>
-        <p>Price: $49.99</p>
-        <a href="#contact">View product</a>
-      </article>
+      <div class="product-grid">
+        <article>
+          <div class="product-icon" aria-hidden="true">🎧</div>
+          <h3>Wireless Headphones</h3>
+          <p>Comfortable sound for music and calls.</p>
+          <p class="price">$49.99</p>
+        </article>
 
-      <article>
-        <h3>Smart Watch</h3>
-        <p>Track your activity and check notifications.</p>
-        <p>Price: $79.99</p>
-        <a href="#contact">View product</a>
-      </article>
+        <article>
+          <div class="product-icon" aria-hidden="true">⌚</div>
+          <h3>Smart Watch</h3>
+          <p>Keep track of your day and activity.</p>
+          <p class="price">$79.99</p>
+        </article>
 
-      <article>
-        <h3>Travel Backpack</h3>
-        <p>A lightweight backpack for everyday use.</p>
-        <p>Price: $34.99</p>
-        <a href="#contact">View product</a>
-      </article>
+        <article>
+          <div class="product-icon" aria-hidden="true">🎒</div>
+          <h3>Travel Backpack</h3>
+          <p>A lightweight companion for every day.</p>
+          <p class="price">$34.99</p>
+        </article>
+      </div>
     </section>
 
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Us</h2>
-      <p>ShopEase makes it easy to find products for everyday life.</p>
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">Shopping that feels simple</h2>
+      <p>ShopEase helps you find practical products for everyday life.</p>
     </section>
   </main>
 
